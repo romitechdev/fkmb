@@ -19,7 +19,7 @@ export const kegiatan = pgTable('kegiatan', {
     updatedAt: timestamp('updated_at').defaultNow().notNull(),
 });
 
-export const kegiatanRelations = relations(kegiatan, ({ one, many }) => ({
+export const kegiatanRelations = relations(kegiatan, ({ one }) => ({
     departemen: one(departemen, {
         fields: [kegiatan.departemenId],
         references: [departemen.id],

@@ -3,7 +3,6 @@ import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import path from 'path';
-import { fileURLToPath } from 'url';
 import 'dotenv/config';
 
 import { env } from './config/env.js';
@@ -11,8 +10,8 @@ import { testConnection } from './config/database.js';
 import routes from './routes/index.js';
 import { notFoundHandler, globalErrorHandler } from './middleware/error-handler.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// Use process.cwd() for uploads path since we're in ESM
+const uploadsPath = path.join(process.cwd(), 'uploads');
 
 const app = express();
 
@@ -39,7 +38,7 @@ app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 // Static files for uploads
-app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')));
+app.use('/uploads', express.static(uploadsPath));
 
 // API routes
 app.use('/api', routes);

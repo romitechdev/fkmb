@@ -25,7 +25,7 @@ export const users = pgTable('users', {
     updatedAt: timestamp('updated_at').defaultNow().notNull(),
 });
 
-export const usersRelations = relations(users, ({ one, many }) => ({
+export const usersRelations = relations(users, ({ one }) => ({
     role: one(roles, {
         fields: [users.roleId],
         references: [roles.id],

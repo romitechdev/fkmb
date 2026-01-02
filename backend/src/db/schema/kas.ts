@@ -1,5 +1,4 @@
 import { pgTable, uuid, varchar, text, timestamp, decimal, boolean } from 'drizzle-orm/pg-core';
-import { relations } from 'drizzle-orm';
 
 export const kas = pgTable('kas', {
     id: uuid('id').primaryKey().defaultRandom(),
@@ -13,10 +12,6 @@ export const kas = pgTable('kas', {
     updatedAt: timestamp('updated_at').defaultNow().notNull(),
 });
 
-export const kasRelations = relations(kas, ({ many }) => ({
-    details: many(kas),
-    laporan: many(kas),
-}));
-
 export type Kas = typeof kas.$inferSelect;
 export type NewKas = typeof kas.$inferInsert;
+

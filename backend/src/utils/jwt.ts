@@ -6,7 +6,7 @@ export function generateAccessToken(payload: Omit<JwtPayload, 'type'>): string {
     return jwt.sign(
         { ...payload, type: 'access' },
         env.JWT_SECRET,
-        { expiresIn: env.JWT_EXPIRES_IN }
+        { expiresIn: env.JWT_EXPIRES_IN } as jwt.SignOptions
     );
 }
 
@@ -14,7 +14,7 @@ export function generateRefreshToken(payload: Omit<JwtPayload, 'type'>): string 
     return jwt.sign(
         { ...payload, type: 'refresh' },
         env.JWT_REFRESH_SECRET,
-        { expiresIn: env.JWT_REFRESH_EXPIRES_IN }
+        { expiresIn: env.JWT_REFRESH_EXPIRES_IN } as jwt.SignOptions
     );
 }
 

@@ -1,5 +1,4 @@
-import { pgTable, uuid, varchar, text, timestamp, boolean } from 'drizzle-orm/pg-core';
-import { relations } from 'drizzle-orm';
+import { pgTable, uuid, varchar, text, timestamp } from 'drizzle-orm/pg-core';
 
 export const departemen = pgTable('departemen', {
     id: uuid('id').primaryKey().defaultRandom(),
@@ -11,12 +10,6 @@ export const departemen = pgTable('departemen', {
     updatedAt: timestamp('updated_at').defaultNow().notNull(),
 });
 
-export const departemenRelations = relations(departemen, ({ many }) => ({
-    users: many(departemen),
-    kepengurusan: many(departemen),
-    kegiatan: many(departemen),
-    arsip: many(departemen),
-}));
-
 export type Departemen = typeof departemen.$inferSelect;
 export type NewDepartemen = typeof departemen.$inferInsert;
+
