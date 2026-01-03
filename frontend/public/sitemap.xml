@@ -7,9 +7,27 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://fkmb-unesa.vercel.app/login</loc>
+    <loc>https://fkmb-unesa.vercel.app/#tentang</loc>
     <lastmod>2026-01-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fkmb-unesa.vercel.app/#program</loc>
+    <lastmod>2026-01-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fkmb-unesa.vercel.app/#beasiswa</loc>
+    <lastmod>2026-01-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fkmb-unesa.vercel.app/login</loc>
+    <lastmod>2026-01-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>

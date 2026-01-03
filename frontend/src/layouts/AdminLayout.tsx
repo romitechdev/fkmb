@@ -28,17 +28,17 @@ interface MenuItem {
 }
 
 const menuItems: MenuItem[] = [
-    { name: 'Dashboard', path: '/dashboard', icon: <LayoutDashboard size={20} />, roles: ['admin', 'pengurus', 'bendahara'] },
-    { name: 'Users', path: '/users', icon: <Users size={20} />, roles: ['admin'] },
-    { name: 'Departemen', path: '/departemen', icon: <Building2 size={20} />, roles: ['admin', 'pengurus', 'bendahara'] },
-    { name: 'Kepengurusan', path: '/kepengurusan', icon: <UserCog size={20} />, roles: ['admin', 'pengurus'] },
-    { name: 'Kegiatan', path: '/kegiatan', icon: <Calendar size={20} />, roles: ['admin', 'pengurus', 'bendahara'] },
-    { name: 'Absensi Token', path: '/absensi-token', icon: <QrCode size={20} />, roles: ['admin', 'pengurus'] },
-    { name: 'Absensi', path: '/absensi', icon: <ClipboardCheck size={20} /> },
-    { name: 'Kas', path: '/kas', icon: <Wallet size={20} />, roles: ['admin', 'bendahara'] },
-    { name: 'Transaksi', path: '/kas-detail', icon: <Receipt size={20} />, roles: ['admin', 'bendahara'] },
-    { name: 'Laporan Kas', path: '/laporan-kas', icon: <FileText size={20} />, roles: ['admin', 'bendahara'] },
-    { name: 'Arsip', path: '/arsip', icon: <FolderArchive size={20} /> },
+    { name: 'Dashboard', path: '/admin/dashboard', icon: <LayoutDashboard size={20} />, roles: ['admin', 'pengurus', 'bendahara'] },
+    { name: 'Users', path: '/admin/users', icon: <Users size={20} />, roles: ['admin'] },
+    { name: 'Departemen', path: '/admin/departemen', icon: <Building2 size={20} />, roles: ['admin', 'pengurus', 'bendahara'] },
+    { name: 'Kepengurusan', path: '/admin/kepengurusan', icon: <UserCog size={20} />, roles: ['admin', 'pengurus'] },
+    { name: 'Kegiatan', path: '/admin/kegiatan', icon: <Calendar size={20} />, roles: ['admin', 'pengurus', 'bendahara'] },
+    { name: 'Absensi Token', path: '/admin/absensi-token', icon: <QrCode size={20} />, roles: ['admin', 'pengurus'] },
+    { name: 'Absensi', path: '/admin/absensi', icon: <ClipboardCheck size={20} /> },
+    { name: 'Kas', path: '/admin/kas', icon: <Wallet size={20} />, roles: ['admin', 'bendahara'] },
+    { name: 'Transaksi', path: '/admin/kas-detail', icon: <Receipt size={20} />, roles: ['admin', 'bendahara'] },
+    { name: 'Laporan Kas', path: '/admin/laporan-kas', icon: <FileText size={20} />, roles: ['admin', 'bendahara'] },
+    { name: 'Arsip', path: '/admin/arsip', icon: <FolderArchive size={20} /> },
 ];
 
 export function AdminLayout() {
@@ -75,7 +75,7 @@ export function AdminLayout() {
             >
                 {/* Logo */}
                 <div className="flex items-center justify-between h-20 px-6 border-b border-gray-100">
-                    <Link to="/dashboard" className="flex items-center gap-3">
+                    <Link to="/admin/dashboard" className="flex items-center gap-3">
                         <div className="w-10 h-10 rounded-xl flex items-center justify-center overflow-hidden">
                             <img src="/logo-fkmb.png" alt="FKMB UNESA" className="w-full h-full object-contain" />
                         </div>
@@ -166,7 +166,7 @@ export function AdminLayout() {
                                     <div className="py-2">
                                         <button
                                             className="w-full flex items-center gap-3 px-4 py-2.5 text-left text-gray-700 hover:bg-gray-50 transition-colors"
-                                            onClick={() => { setUserMenuOpen(false); navigate('/change-password'); }}
+                                            onClick={() => { setUserMenuOpen(false); navigate('/admin/change-password'); }}
                                         >
                                             <Key size={18} className="text-gray-400" />
                                             <span>Ubah Password</span>
