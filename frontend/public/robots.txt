@@ -1,0 +1,9 @@
+# Robots.txt for FKMB UNESA
+User-agent: *
+Allow: /
+Disallow: /login
+Disallow: /dashboard
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://fkmb-unesa.vercel.app/sitemap.xml
